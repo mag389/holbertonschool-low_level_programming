@@ -2,11 +2,12 @@
 /* 4-puts.c printing with puts */
 
 /**
-*prints the phrase below using the puts method
+*Description: prints the phrase below using the puts method
 *then prints 0
 *
-*main: the main function of this file
-*return: just returns integer zero
+*Main: the main function of this file
+*
+*Return: just returns integer zero
 */
 int main(void)
 {
