@@ -1,11 +1,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
 
-/* betty style doc for function main goes there
+/**
+*main - prints random # and the sign of it
+*Description: prints whether the random generated number is positive
+*Return: always 0
 *
-*
+*Main: returns a random number along with it's sign
 *
  */
 int main(void)
@@ -16,13 +18,13 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
 	{
-		printf("%d is a positive\n",n);
+		printf("%d is a positive\n", n);
 	}
 	else if (n < 0)
 	{
-		printf("%d is a negative\n",n);
+		printf("%d is a negative\n", n);
 	}
-	else 
+	else
 	{
 		printf("0 is zero");
 	}
