@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
-*main - pritns whole alphabet
+*main - prints whole alphabet
 *
-*Description
+*Description:retruns entire alphabet
 *Return: 0
 */
 int main(void)
