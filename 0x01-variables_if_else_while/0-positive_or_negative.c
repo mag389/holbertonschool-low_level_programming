@@ -4,7 +4,6 @@
 
 /**
 *main - prints random # and the sign of it
-*Description: prints whether the random generated number is positive
 *Return: always 0
 *
 *Main: returns a random number along with it's sign
@@ -26,7 +25,7 @@ int main(void)
 	}
 	else
 	{
-		printf("%d is zero", n);
+		printf("%d is zero\n", n);
 	}
 	return (0);
 }
