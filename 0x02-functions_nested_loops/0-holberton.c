@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-
+#include "holberton.h"
 /**
 *main-prints output using only _putchar
 *
@@ -8,8 +8,6 @@
 *Return:0
 *
 */
-int _putchar(char c);
-
 int main(void)
 {
 	int i;
@@ -21,9 +19,4 @@ int main(void)
 	}
 	_putchar('\n');
 	return (0);
-}
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
