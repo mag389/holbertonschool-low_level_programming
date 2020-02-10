@@ -2,9 +2,8 @@
 #include <unistd.h>
 #include "holberton.h"
 /**
-*main-prints alphabet using only _putchar
-*
-*description:prints alphabet
+*print_alphabet - prints alphabet
+*Description:prints alphabet
 *Return:0
 *
 */
