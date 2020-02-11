@@ -11,17 +11,22 @@
 */
 int print_last_digit(int n)
 {
+	int d;
+
 	if (n < 0)
 	{
-		_putchar('0' + ((-1 * n) % 10));
-		return ((-1 * n) % 10);
+		d = -1 * n % 10;
+		_putchar('0' + d);
+		return (d);
 	}
 	else
 	{
-		_putchar('0' + (n % 10));
-		return (n % 10);
+		d = n % 10;
+		_putchar('0' + d);
+		return (d);
 	}
 /*
+*	origin putchar ((-1 * n) % 10)
 *	else
 *	{
 *		_putchar('0');
