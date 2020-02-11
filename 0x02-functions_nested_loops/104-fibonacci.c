@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
-*main - prints even fibonacci's less than 4m
+*main - prints even fibonacci's thru 98th
 *
-*Descrirption: loops through fibonacci adding sum
+*Descrirption: loops through fibonaccis printing
 *Return: sum
 *
 */
@@ -20,7 +20,7 @@ int main(void)
 	for (i = 0; i < 98; i++)
 	{
 		temp = num1 + num2;
-		printf("%lu",temp);
+		printf("%lu", temp);
 		if (i < 97)
 			printf(", ");
 		num1 = num2;
