@@ -21,7 +21,8 @@ int main(void)
 	for (i = 0; i < 32; i++)
 	{
 		temp = num1 + num2;
-		sum = sum + temp;
+		if (temp % 2 == 0)
+			sum = sum + temp;
 		num1 = num2;
 		num2 = temp;
 	}
