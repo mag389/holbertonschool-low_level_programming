@@ -6,7 +6,6 @@
 *
 *Descrirption: as above
 *Return: 0
-*@n: fib number index up to
 */
 
 int main(void)
