@@ -13,10 +13,18 @@ long fibo(int n);
 int main(void)
 {
 	int i;
+	long num1;
+	long num2;
+	long temp;
 
-	for (i = 2; i < 52; i++)
+	num1 = 0;
+	num2 = 1;
+	for (i = 0; i < 51; i++)
 	{
-		printf("%ld, ", fibo(i));
+		temp = num1 + num2;
+		printf("%ld, ", num1 + num2);
+		num1 = num2;
+		num2 = temp;
 	}
 	printf("\n");
 	return (50);
