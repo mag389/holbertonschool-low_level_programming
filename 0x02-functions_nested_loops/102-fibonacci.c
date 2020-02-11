@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
-*main - returns sum of integers divisible by 3 or 5
+*main - prints first 50 fibonacci's
 *
-*Descrirption: as above
+*Descrirption: loops through fibonacci numbers printing them
 *Return: 0
 */
 
@@ -27,6 +27,6 @@ int main(void)
 			printf(", ");
 	}
 	printf("\n");
-	return (50);
+	return (0);
 }
 
