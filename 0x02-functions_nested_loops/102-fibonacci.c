@@ -19,7 +19,7 @@ int main(void)
 
 	num1 = 0;
 	num2 = 1;
-	for (i = 0; i < 51; i++)
+	for (i = 0; i < 50; i++)
 	{
 		temp = num1 + num2;
 		printf("%ld, ", num1 + num2);
