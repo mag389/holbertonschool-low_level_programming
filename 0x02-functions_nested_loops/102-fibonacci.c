@@ -8,7 +8,6 @@
 *Return: 0
 *@n: fib number index up to
 */
-long fibo(int n);
 
 int main(void)
 {
@@ -22,27 +21,13 @@ int main(void)
 	for (i = 0; i < 50; i++)
 	{
 		temp = num1 + num2;
-		printf("%ld, ", num1 + num2);
+		printf("%ld", num1 + num2);
 		num1 = num2;
 		num2 = temp;
+		if (i < 49)
+			printf(", ");
 	}
 	printf("\n");
 	return (50);
 }
 
-/**
-*fibo - fibonacci value up to n
-*@n: highest fib num
-*Return:gives long int of the fib num
-*/
-long fibo(int n)
-{
-	if (n < 2)
-		{
-		return (n);
-		}
-	else
-		{
-		return (fibo(n - 1) + fibo(n - 2));
-		}
-}
