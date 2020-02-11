@@ -18,7 +18,7 @@ int main(void)
 
 	num1 = 0;
 	num2 = 1;
-	for (i = 0; i < 32; i++)
+	for (i = 0; i < 33; i++)
 	{
 		temp = num1 + num2;
 		if (temp % 2 == 0)
