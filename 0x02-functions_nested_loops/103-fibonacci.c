@@ -11,10 +11,10 @@
 int main(void)
 {
 	int i;
-	long num1;
-	long num2;
-	long temp;
-	long sum;
+	int num1;
+	int num2;
+	int temp;
+	int sum;
 
 	num1 = 0;
 	num2 = 1;
@@ -28,8 +28,7 @@ int main(void)
 		num1 = num2;
 		num2 = temp;
 	}
-	printf("%ld", sum);
+	printf("%d", sum);
 	printf("\n");
-	return (sum);
+	return (0);
 }
-
