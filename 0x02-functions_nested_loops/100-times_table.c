@@ -7,7 +7,7 @@
 *Description:print the table of n
 *Return:void
 *
-*@n what number to go up to
+*@n: what number to go up to
 */
 void print_times_table(int n)
 {
@@ -20,7 +20,11 @@ void print_times_table(int n)
 		{
 		for (j = 0; j <= n; j++)
 		{
-			if (i * j >= 100)
+			if (j == 0)
+			{
+				_putchar('0');
+			}
+			else if (i * j >= 100)
 			{
 				_putchar('0' + (j * i) / 100);
 				_putchar('0' + (j * i) / 10 % 10);
