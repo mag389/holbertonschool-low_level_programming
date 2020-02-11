@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 /**
-*main - prints first 50 fibonacci's
+*main - prints even fibonacci's less than 4m
 *
-*Descrirption: loops through fibonacci numbers printing them
-*Return: 0
+*Descrirption: loops through fibonacci adding sum
+*Return: sum
+*
 */
-
 int main(void)
 {
 	int i;
@@ -28,7 +28,8 @@ int main(void)
 		num1 = num2;
 		num2 = temp;
 	}
-	printf("%ld\n", sum);
+	printf("%ld", sum);
+	printf("\n");
 	return (sum);
 }
 
