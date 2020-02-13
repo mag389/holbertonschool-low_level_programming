@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#inclue "holberton.h"
+#include "holberton.h"
 
 /**
 *main- prints nums
