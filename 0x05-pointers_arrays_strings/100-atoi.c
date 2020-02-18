@@ -73,22 +73,23 @@ int _atoi(char *s)
 int negafy(char *s, int numstart)
 {
 	int i;
-	int sign = 0;
+	int sign = 1;
 
 	for (i = 0; i < numstart; i++)
 	{
 		if (s[i] == '-')
-			sign = sign - 1;
-
-		if (s[i] == '+')
-			sign++;
-
+			sign *= - 1;
+/*
+*		if (s[i] == '+')
+*			sign++;
+*/
 	}
-
-	if (sign < 0)
-		sign = -1;
-	else
-		sign = 1;
+/*
+*	if (sign < 0)
+*		sign = -1;
+*	else
+*		sign = 1;
+*/
 	return (sign);
 }
 
