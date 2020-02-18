@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <math.h>
-int negafy(int num, char *s, int numstart);
+int negafy(char *s, int numstart);
 
 /**
 *_atoi - returns int from string
@@ -14,7 +14,7 @@ int _atoi(char *s)
 {
 /*	int len = _strlen(s); */
 	int numstart = 0, numend, finalnum = 0;
-	int  i, m = 1;
+	int  i, m = 1, sign = 1;
 /*
 *	printf("int %i",  '1'-48);
 *	printf("int or char %d", '1' - 48);
@@ -40,18 +40,20 @@ int _atoi(char *s)
 *
 *	m = 1;
 */
+	sign = negafy(s, numstart);
 	for (i = 1; i <=  numend - numstart; i++)
 		{
 /*
 *		printf("maybe digit: %i", s[numstart + i] - 48);
 *		printf("perhaps %i \n", s[numend - i] -48);
 */
-		finalnum += (s[numend - i] - 48) * m;
+		finalnum += (s[numend - i] - 48) * m * sign;
 		m *= 10;
 		}
-	if (numstart != 0)
-		finalnum = negafy(finalnum, s, numstart);
 /*
+*	if (numstart != 0)
+*		finalnum = negafy(finalnum, s, numstart);
+*
 *	{
 *		if (s[numstart - 1] == '-')
 *			finalnum = finalnum * -1;
@@ -64,11 +66,11 @@ int _atoi(char *s)
 *negafy - decides if num should be negative
 *Description: if it should be neg, multiplies by -1
 *Return: void
-*@num: the number in the string
+*
 *@s: the string
 *@numstart: index where the number starts
 */
-int negafy(int num, char *s, int numstart)
+int negafy(char *s, int numstart)
 {
 	int i;
 	int sign = 1;
@@ -86,7 +88,7 @@ int negafy(int num, char *s, int numstart)
 *	if (sign < 0)
 *		num = num * -1;
 */
-	return (num * sign);
+	return (sign);
 }
 
 /**
