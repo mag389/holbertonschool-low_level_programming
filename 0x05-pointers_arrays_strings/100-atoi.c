@@ -12,53 +12,22 @@ int negafy(char *s, int numstart);
 */
 int _atoi(char *s)
 {
-/*	int len = _strlen(s); */
 	int numstart = 0, numend, finalnum = 0;
 	int  i, m = 1, sign = 1;
-/*
-*	printf("int %i",  '1'-48);
-*	printf("int or char %d", '1' - 48);
-*	printf("the 0th value of string%c\n" , s[numstart] - 48);
-*	printf("true alse num %i\n", s[numstart] < '0');
-*/
+
 	while (s[numstart] < '0' || s[numstart] > '9')
 	{
 		numstart++;
-/*
-*		printf("the digit is  %i,  ",s[numstart] - 48);
-*		printf("index %i\n", numstart);
-*/
 	}
-/*
-*	printf("numstart: %i  ", numstart);
-*/
 	numend = numstart;
 	while (s[numend] >= '0' && s[numend])
 		numend++;
-/*
-*	printf("numend: %i\n",numend);
-*
-*	m = 1;
-*/
 	sign = negafy(s, numstart);
 	for (i = 1; i <=  numend - numstart; i++)
 		{
-/*
-*		printf("maybe digit: %i", s[numstart + i] - 48);
-*		printf("perhaps %i \n", s[numend - i] -48);
-*/
 		finalnum += (s[numend - i] - 48) * m * sign;
 		m *= 10;
 		}
-/*
-*	if (numstart != 0)
-*		finalnum = negafy(finalnum, s, numstart);
-*
-*	{
-*		if (s[numstart - 1] == '-')
-*			finalnum = finalnum * -1;
-*	}
-*/
 	return (finalnum);
 }
 
@@ -79,17 +48,7 @@ int negafy(char *s, int numstart)
 	{
 		if (s[i] == '-')
 			sign *= -1;
-/*
-*		if (s[i] == '+')
-*			sign++;
-*/
 	}
-/*
-*	if (sign < 0)
-*		sign = -1;
-*	else
-*		sign = 1;
-*/
 	return (sign);
 }
 
