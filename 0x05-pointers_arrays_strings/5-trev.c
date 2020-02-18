@@ -12,23 +12,14 @@ void rev_string(char *s)
 {
 	int len = _strlen(s);
 	int i;
-//	char temp1[len];
 	char temp2[len];
 
-	printf("%s\n",temp2);	
 	for (i = len - 1; i >= 0; i--)
 	{
-		printf("iteration number %i\n",i);
-		printf("current temp2 %c\n",temp2[i]);
-		printf("current s %c\n",s[i]);
 		temp2[len - i - 1] = s[i];
-		printf("updated temp2 %s\n",temp2);
 	}
-//	s = temp2;
 	for (i = 0; i < len; i++)
 		s[i] = temp2[i];
-	printf("%s\n",temp2);
-	printf("%s\n", s);
 }
 
 /**
