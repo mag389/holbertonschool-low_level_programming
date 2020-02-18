@@ -78,7 +78,7 @@ int negafy(char *s, int numstart)
 	for (i = 0; i < numstart; i++)
 	{
 		if (s[i] == '-')
-			sign = sign -1;
+			sign = sign - 1;
 
 		if (s[i] == '+')
 			sign++;
