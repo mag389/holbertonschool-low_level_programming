@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <math.h>
+int negafy(int num, char *s, int numstart);
 
 /**
 *_atoi - returns int from string
@@ -49,12 +50,36 @@ int _atoi(char *s)
 		m *= 10;
 		}
 	if (numstart != 0)
-	{
-		if (s[numstart - 1] == '-')
-			finalnum = finalnum * -1;
-	}
+		finalnum = negafy(finalnum, s, numstart);
+/*
+*	{
+*		if (s[numstart - 1] == '-')
+*			finalnum = finalnum * -1;
+*	}
+*/
 	return (finalnum);
 }
+
+/**
+*negafy - decides if num should be negative
+*Description: if it should be neg, multiplies by -1
+*Return: void
+*@num: the number in the string
+*@s: the string
+*@numstart: index where the number starts
+*/
+int negafy(int num, char *s, int numstart)
+{
+	int i;
+
+	for (i = 0; i < numstart; i++)
+	{
+		if (s[i] == '-')
+			num = num * -1;
+	}
+	return (num);
+}
+
 /**
 *_strlen - gives length of a given string
 *
