@@ -44,24 +44,18 @@ int _atoi(char *s)
 int negafy(char *s, int numstart)
 {
 	int i;
-	int sign = 0;
+	int sign = 1;
 
 	for (i = 0; i < numstart; i++)
 	{
 		if (s[i] == '-')
-			sign--;
-		else if (s[i] == '+')
-			sign++;
+			sign *= -1;
 	}
-	if (sign < 0)
-		return (-1);
-	else
-		return (1);
+	return (sign);
 }
 
 /**
 *_strlen - gives length of a given string
-*
 *Description:takes a pointer to a char and returns length
 *Return:the length of a string
 *@s:given integer variable 1
