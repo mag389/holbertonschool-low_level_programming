@@ -44,14 +44,19 @@ int _atoi(char *s)
 int negafy(char *s, int numstart)
 {
 	int i;
-	int sign = 1;
+	int sign = 0;
 
 	for (i = 0; i < numstart; i++)
 	{
 		if (s[i] == '-')
-			sign *= -1;
+			sign--;
+		else if (s[i] == '+')
+			sign++;
 	}
-	return (sign);
+	if (sign < 0)
+		return (-1);
+	else
+		return (1);
 }
 
 /**
