@@ -28,7 +28,7 @@ int _atoi(char *s)
 	for (i = 1; i <=  numend - numstart; i++)
 		{
 		finalnum += (s[numend - i] - 48) * m * sign;
-		if(m < 1000000000)
+		if( m < 1000000000)
 			m *= 10;
 		}
 	return (finalnum);
