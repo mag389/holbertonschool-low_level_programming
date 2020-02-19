@@ -15,10 +15,12 @@ int _atoi(char *s)
 	int numstart = 0, numend, finalnum = 0;
 	int  i, m = 1, sign = 1;
 
-	while (s[numstart] < '0' || s[numstart] > '9')
+	while ((s[numstart] < '0' || s[numstart] > '9') && numstart < _strlen(s) - 1)
 	{
 		numstart++;
 	}
+	if (numstart == _strlen(s) - 1)
+		return (0);
 	numend = numstart;
 	while (s[numend] >= '0' && s[numend])
 		numend++;
