@@ -15,7 +15,7 @@ int _atoi(char *s)
 	int numstart = 0, numend, finalnum = 0;
 	int  i, m = 1, sign = 1;
 
-	while ((s[numstart] < '0' || s[numstart] > '9') && numstart < _strlen(s) - 1)
+	while ((s[numstart] < '0' || s[numstart] > '9') && numstart < _strlen(s))
 	{
 		numstart++;
 	}
@@ -28,7 +28,8 @@ int _atoi(char *s)
 	for (i = 1; i <=  numend - numstart; i++)
 		{
 		finalnum += (s[numend - i] - 48) * m * sign;
-		m *= 10;
+		if(m < 1000000000)
+			m *= 10;
 		}
 	return (finalnum);
 }
