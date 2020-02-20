@@ -9,7 +9,7 @@
 */
 char *_strcat(char *dest, char *src)
 {
-	int lensrc = 0,lendest = 0, i, newlength;
+	int lensrc = 0, lendest = 0, i, newlength;
 
 	while (*(src + lensrc) != 0)
 		lensrc++;
