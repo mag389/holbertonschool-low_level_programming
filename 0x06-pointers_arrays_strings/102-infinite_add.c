@@ -19,7 +19,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		n1len++;
 	while (*(n2 + n2len) != '\0')
 		n2len++;
-
 	if (n1len < n2len)
 		smallerlen = n1len;
 	else
@@ -34,15 +33,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	for (i = 0; i < size_r; i++)
 	{
 		if (i + 1 <= n1len)
-		{
 			d1 = n1[n1len - i - 1] - 48;
-		}
 		else
 			d1 = 0;
 		if (i + 1 <= n2len)
-		{
 			d2 = n2[n2len - i - 1] - 48;
-		}
 		else
 			d2 = 0;
 		smallsum = d1 + d2 + remainder;
@@ -53,11 +48,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			remainder = 0;
 		if (i == size_r - 1 && remainder == 1)
 			return (0);
-		d1 = 0;
-		d2 = 0;
 	}
 	while (!(r[j] >= '1' && r[j] <= '9'))
 		j++;
-	r = &r[j];
-	return (r);
+	return (&r[j]);
 }
