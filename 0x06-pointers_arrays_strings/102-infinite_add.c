@@ -12,16 +12,12 @@
 */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int n1len = 0, n2len = 0, d1, d2, smallsum, remder = 0, i, j = 0, minlen = 0;
+	int n1len = 0, n2len = 0, d1, d2, smallsum, remder = 0, i, j = 0;
 
 	while (*(n1 + n1len) != '\0')
 		n1len++;
 	while (*(n2 + n2len) != '\0')
 		n2len++;
-	if (n1len < n2len)
-		minlen = n1len;
-	else
-		minlen = n2len;
 	if (n1len >= size_r - 1 || n2len >= size_r - 1)
 		return (0);
 	if (n1len == n2len && n1len >= size_r - 1)
