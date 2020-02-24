@@ -10,23 +10,25 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i = 0;
-	unsigned int j = 0;
+	unsigned int sindex = 0;
+	unsigned int aindex = 0;
 
-	while (s[i] != 0)
+	if (accept[0] == 0)
+		return (0);
+	while (s[sindex] != 0)
 	{
-		while (accept[j] != 0)
+		while (accept[aindex] != 0)
 		{
-			if (s[i] == accept[j])
+			if (s[sindex] == accept[aindex])
 				{
-				i++;
-				j = 0;
+				sindex++;
+				aindex = 0;
 				break;
 				}
-			j++;
+			aindex++;
 		}
-		if (j != 0)
-			return (i);
+		if (aindex != 0)
+			return (sindex);
 	}
-	return (i);
+	return (sindex);
 }
