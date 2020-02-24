@@ -14,6 +14,8 @@ char *_strstr(char *haystack, char *needle)
 	unsigned int aindex = 0;
 	int templength = 0;
 
+	if (needle[0] == 0)
+		return (haystack);
 	while (haystack[sindex] != 0)
 	{
 		while (needle[aindex] != 0)
