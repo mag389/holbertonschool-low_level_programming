@@ -32,6 +32,8 @@ char *_strstr(char *haystack, char *needle)
 		if (needle[aindex] == 0)
 			return (&haystack[sindex - templength]);
 		aindex = 0;
+		sindex -= templength;
+		templength = 0;
 		sindex++;
 	}
 	return (0);
