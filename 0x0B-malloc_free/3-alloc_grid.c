@@ -7,7 +7,7 @@
 *@width: width of the grid
 *@height: height of the grid
 */
-int **alocc_grid(int width, int height)
+int **alloc_grid(int width, int height)
 {
 	int i, j;
 	int **thegrid;
