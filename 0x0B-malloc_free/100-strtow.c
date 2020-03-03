@@ -11,6 +11,7 @@ char **strtow(char *str)
 {
 	int i, j, k, len = 0, nonspaces, wordlength, wordcount;
 	char **words;
+
 	while (str[len] != 0)
 		{
 		if (str[len] != ' ')
@@ -30,7 +31,7 @@ char **strtow(char *str)
 			i += wordlength;
 		}
 	}
-	words = malloc(wordcount * sizeof(char*));
+	words = malloc(wordcount * sizeof(char *));
 	for (i = 0, j = 0; i < len;)
 	{
 		if (str[i] == ' ')
@@ -46,7 +47,6 @@ char **strtow(char *str)
 			j++;
 			i += wordlength;
 		}
-			
 	}
 	return (words);
 }
