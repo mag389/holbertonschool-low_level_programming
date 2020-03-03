@@ -18,7 +18,7 @@ char *str_concat(char *s1, char *s2)
 	while (s2[lens2] != 0)
 		lens2++;
 
-	thearray = malloc((lens1 + lens2) * sizeof(char));
+	thearray = malloc((lens1 + lens2) * sizeof(char) + 1);
 
 	if (thearray == NULL)
 		return (NULL);
