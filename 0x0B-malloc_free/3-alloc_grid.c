@@ -2,7 +2,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
-*alloc_grid - prints a grid of integers
+*alloc_grid - allocates memory for gri of ints
 *Return:char* or null
 *@width: width of the grid
 *@height: height of the grid
@@ -14,12 +14,12 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	thegrid = malloc(sizeof(int *) * height + 1);
+	thegrid = malloc(sizeof(int *) * widtht + 1);
 	if (thegrid == NULL)
 		return (NULL);
 	for (i = 0; i < height; i++)
 	{
-		thegrid[i] = malloc(sizeof(int) * width + 1);
+		thegrid[i] = malloc(sizeof(int) * height + 1);
 		if (thegrid[i] == NULL)
 			return (NULL);
 		for (j = 0; j < width; j++)
