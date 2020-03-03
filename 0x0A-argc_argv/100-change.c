@@ -40,5 +40,5 @@ int main(int argc, char *argv[])
 
 	numofcoins += cents;
 	printf("%i\n", numofcoins);
-	return (numofcoins);
+	return (0);
 }
