@@ -12,11 +12,16 @@ char *str_concat(char *s1, char *s2)
 	int i, lens1 = 0, lens2 = 0;
 	char *thearray;
 
-
-	while (s1[lens1] != 0)
-		lens1++;
+	if (s1 != NULL)
+	{
+		while (s1[lens1] != 0)
+			lens1++;
+	}
+	if (s2 != NULL)
+	{
 	while (s2[lens2] != 0)
 		lens2++;
+	}
 
 	thearray = malloc((lens1 + lens2) * sizeof(char) + 1);
 
