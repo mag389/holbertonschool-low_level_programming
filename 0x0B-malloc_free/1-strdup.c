@@ -21,11 +21,11 @@ char *_strdup(char *str)
 	if (thearray == NULL)
 		return (NULL);
 
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < size; i++)
 	{
 		thearray[i] = str[i];
 	}
-/*	thearray[i] = 0;*/
+	thearray[i] = '\0';
 
 	return (thearray);
 }
