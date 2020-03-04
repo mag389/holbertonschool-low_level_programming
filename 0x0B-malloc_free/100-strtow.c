@@ -9,12 +9,15 @@ int tospace(char *str);
 */
 char **strtow(char *str)
 {
-	int i, j, k, len = 0, wordlength, wordcount;
+	int i, j, k, len = 0, wordlength, wordcount = 0;
 	char **words;
 
+	if (str == NULL)
+		return (NULL);
 	while (str[len] != 0)
 		len++;
-
+	if (len == 0)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
@@ -27,7 +30,7 @@ char **strtow(char *str)
 			i += wordlength;
 		}
 	}
-	words = malloc(wordcount * sizeof(char *));
+	words = malloc(wordcount * sizeof(char *) + 1);
 	if (words == NULL)
 		return (NULL);
 	for (i = 0, j = 0; i < len;)
@@ -37,7 +40,7 @@ char **strtow(char *str)
 		else
 		{
 			wordlength = tospace(&str[i]);
-			words[j] = malloc(wordlength * sizeof(char));
+			words[j] = malloc(wordlength * sizeof(char) + 1);
 			if (words[j] == NULL)
 				return (NULL);
 			for (k = 0; k < wordlength; k++)
@@ -59,7 +62,7 @@ int tospace(char *str)
 {
 	int i = 0;
 
-	while (str[i] != ' ')
+	while (str[i] != ' ' && str[i] != '0')
 		i++;
 	return (i);
 }
