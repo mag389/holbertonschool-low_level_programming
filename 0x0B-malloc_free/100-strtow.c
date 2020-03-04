@@ -30,6 +30,8 @@ char **strtow(char *str)
 			i += wordlength;
 		}
 	}
+	if (words == 0)
+		return (NULL);
 	words = malloc(wordcount * sizeof(char *) + 1);
 	if (words == NULL)
 		return (NULL);
