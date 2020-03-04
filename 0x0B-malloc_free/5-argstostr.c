@@ -18,6 +18,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
+		sizeofarg = 0;
 		while (av[i][sizeofarg] != 0)
 			sizeofarg++;
 		totalarglength += sizeofarg * sizeof(char);
