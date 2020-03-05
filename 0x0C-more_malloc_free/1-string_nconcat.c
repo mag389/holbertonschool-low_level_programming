@@ -12,13 +12,13 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *newspot;
-	unsigned int lens1 = 0, lens2 = 0, i;
+	unsigned int lens1 = 0, lens2 = 0, i = 0;
 
 	if (s1 != NULL)
 		for (lens1 = 0; s1[lens1] != 0; lens1++)
 			;
-	if (s1 != NULL)
-		for (lens2 = 0; s1[lens2] != 0; lens2++)
+	if (s2 != NULL)
+		for (lens2 = 0; s2[lens2] != 0; lens2++)
 			;
 	if (n > lens2)
 		n = lens2;
