@@ -22,13 +22,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			;
 	if (n > lens2)
 		n = lens2;
-	newspot = malloc(sizeof(char) * (lens1 + n + 1));
+	newspot = malloc(sizeof(char) * (lens1 + n));
 	if (newspot == NULL)
 		return (NULL);
 	for (i = 0; i < lens1; i++)
 		newspot[i] = s1[i];
 	for (; i - lens1 < n; i++)
 		newspot[i] = s2[i - lens1];
-	newspot[i] = 0;
 	return (newspot);
 }
