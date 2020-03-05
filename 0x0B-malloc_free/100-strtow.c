@@ -42,7 +42,7 @@ char **strtow(char *str)
 		else
 		{
 			wordlength = tospace(&str[i]);
-			words[j] = malloc((wordlength + 1) * sizeof(char));
+			words[j] = malloc((wordlength) * sizeof(char) + 1);
 			if (words[j] == NULL)
 			{
 				for (; j >= 0; j--)
@@ -54,10 +54,12 @@ char **strtow(char *str)
 			{
 				words[j][k] = str[i + k];
 			}
+			words[j][k] = '\0';
 			j++;
 			i += wordlength;
 		}
 	}
+	words[j] = '\0';
 	return (words);
 }
 /**
