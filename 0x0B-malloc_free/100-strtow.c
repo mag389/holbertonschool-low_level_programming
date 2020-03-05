@@ -44,7 +44,12 @@ char **strtow(char *str)
 			wordlength = tospace(&str[i]);
 			words[j] = malloc(wordlength * sizeof(char) + 1);
 			if (words[j] == NULL)
+			{
+				for (; j >= 0; j--)
+					free(words[j]);
+				free(words);
 				return (NULL);
+			}
 			for (k = 0; k < wordlength; k++)
 			{
 				words[j][k] = str[i + k];
