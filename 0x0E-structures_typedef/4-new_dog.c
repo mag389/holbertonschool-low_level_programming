@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
-
+char *_strdup(char *str);
 /**
 *new_dog - creates a new dog
 *Return: the new dog
@@ -13,36 +13,56 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *newdog;
 	char *newname, *newowner;
-	int i;
 
 	newdog = malloc(2 * sizeof(char *) + sizeof(int));
 	if (newdog == NULL)
 		return (NULL);
-
-	newname = malloc(sizeof(name));
+	newname = _strdup(name);
 	if (newname == NULL)
 		{
 		free(newdog);
 		return (NULL);
 		}
-	for (i = 0; name[i] != '\0'; i++)
-		newname[i] = name[i];
-	newname[i] = 0;
-
-	newowner = malloc(sizeof(owner));
-	if (newowner == NULL)
+	newowner = _strdup(owner);
+	if (owner == NULL)
 		{
 		free(newname);
+		free(newowner);
 		free(newdog);
 		return (NULL);
 		}
-	for (i = 0; owner[i] != 0; i++)
-		newowner[i] = name[i];
-	newowner[i] = 0;
 
 	newdog->name = newname;
 	newdog->age = age;
 	newdog->owner = newowner;
 
 	return (newdog);
+}
+/**
+*_strdup - creates array
+*Return:char or null
+*@str:the string to copy from
+*/
+char *_strdup(char *str)
+{
+	int i, size = 0;
+	char *thearray;
+
+	if (str == NULL)
+		return (NULL);
+
+	while (str[size] != 0)
+		size++;
+	thearray = malloc(size * sizeof(char) + 1);
+
+	if (thearray == NULL)
+		return (NULL);
+
+	for (i = 0; i < size; i++)
+	{
+		thearray[i] = str[i];
+	}
+	thearray[i] = '\0';
+
+	return (thearray);
 }
