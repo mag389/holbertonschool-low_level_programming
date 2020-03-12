@@ -11,7 +11,9 @@
 int main(int argc, char *argv[])
 {
 	int i, number;
+	char *ptr;
 
+	ptr = (char *)&main;
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -24,7 +26,11 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 	for (i = 0; i < number; i++)
-		printf("%02x ", i);
+	{
+		printf("%02hhx", ptr[i]);
+		if (i < number - 1)
+			printf(" ");
+	}
 	printf("\n");
 	return (0);
 }
