@@ -14,6 +14,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list list;
 	unsigned int i;
 	const char *newsep;
+	char *temp;
 
 	if (separator == NULL)
 		newsep = "";
@@ -22,12 +23,13 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_start(list, n);
 	for (i = 0; i < n; i++)
 	{
+		temp = va_arg(list, char*);
 		if (i < n - 1)
 		{
-			printf("%s%s", va_arg(list, char*), newsep);
+			printf("%s%s", (temp != NULL) ? temp : "(nil)", newsep);
 		}
 		else
-			printf("%s", va_arg(list, char*));
+			printf("%s", temp);
 	}
 	printf("\n");
 	va_end(list);
