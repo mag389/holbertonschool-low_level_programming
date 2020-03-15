@@ -29,7 +29,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s%s", (temp != NULL) ? temp : "(nil)", newsep);
 		}
 		else
-			printf("%s", temp);
+			printf("%s", (temp != NULL) ? temp : "(nil)");
 	}
 	printf("\n");
 	va_end(list);
