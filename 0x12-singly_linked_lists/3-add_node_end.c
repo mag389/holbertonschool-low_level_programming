@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "lists.h"
-size_t list_len(const list_t *h);
 /**
 * add_node_end - adds a new node at the end of a list_t list
 * Return: address of the new element of NULL if it failed
@@ -11,8 +10,8 @@ size_t list_len(const list_t *h);
 */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *newtail;
-	unsigned int newleng = 0, i = 0;
+	list_t *newtail, *temp;
+	unsigned int newleng = 0;
 	char *newstr;
 
 	newtail = malloc(sizeof(list_t));
@@ -32,26 +31,11 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	else
 	{
-		i = list_len(*head);
-		printf("past len %i\n", i);
-		(*(head + i - 1))->next = newtail;
-		printf("past next");
-		**(head + i) = newtail;
-		printf("past new node");
+		temp = *head;
+		while (temp->next)
+			temp = temp->next;
+		(temp)->next = newtail;
 	}
 
 	return (newtail);
 }
-/**
-* list_len - gives the number of elements in a linked list
-* Return: the number of elements in a linked list
-* @h: the head node of the list
-*/
-size_t list_len(const list_t *h)
-{
-	if (!h)
-		return (0);
-	else
-		return (list_len(h->next) + 1);
-}
-
