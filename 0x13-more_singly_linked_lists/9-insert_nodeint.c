@@ -36,11 +36,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		templast = temp;
 		temp = temp->next;
 	}
-/*	if (!templast)
-	{
-		free(newnode);
-		return (NULL);
-	}*/
 	if (cpy == 0)
 	{
 		newnode->next = *head;
