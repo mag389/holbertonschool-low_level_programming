@@ -10,13 +10,8 @@ void print_binary(unsigned long int n)
 	unsigned long int cpy = n, digits = 1;
 	int max_digits = 0;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
 	cpy = cpy >> 1;
-	while (cpy != 0 && max_digits < 65)
+	while (cpy != 0)
 	{
 		digits = digits << 1;
 		cpy = cpy >> 1;
