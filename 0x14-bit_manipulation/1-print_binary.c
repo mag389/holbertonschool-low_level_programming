@@ -8,11 +8,13 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int cpy = n, digits = 1;
+	int max_digits = 0;
 
-	while (cpy != 0)
+	while (cpy != 0 && max_digits < 64)
 	{
 		digits = digits << 1;
 		cpy = cpy >> 1;
+		max_digits++;
 	}
 	if (n > 0)
 		digits = digits >> 1;
