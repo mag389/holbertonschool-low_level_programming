@@ -7,15 +7,12 @@
 */
 void print_binary(unsigned long int n)
 {
-	unsigned long int cpy = n, digits = 1;
-	int max_digits = 0;
+	unsigned long int cpy = n >> 1, digits = 1;
 
-	cpy = cpy >> 1;
 	while (cpy != 0)
 	{
 		digits = digits << 1;
 		cpy = cpy >> 1;
-		max_digits++;
 	}
 	while (digits != 0)
 	{
