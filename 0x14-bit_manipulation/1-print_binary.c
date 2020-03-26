@@ -21,12 +21,7 @@ void print_binary(unsigned long int n)
 		digits = digits << 1;
 		cpy = cpy >> 1;
 		max_digits++;
-/*		printf("digits:%lu\n", digits);*/
 	}
-/*	printf("n: %lu\n", n);
-	printf("max_dig: %i\n", max_digits);
-	printf("digits: %lu\n", digits);
-	digits = digits >> 1;*/
 	while (digits != 0)
 	{
 		_putchar('0' + ((n & digits) == digits));
