@@ -1,5 +1,6 @@
 #include "holberton.h"
 
+void copy_file(int from_num, int to_num, char *from, char *to);
 /**
 * main - copies one file to another
 * Return: an integer depending on if the function succeeded
@@ -8,8 +9,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int from_num, to_num, read_num, writ_num, cl1, cl2;
-	char *buffer;
+	int from_num, to_num, cl1, cl2;
 
 	if (argc != 3)
 	{
@@ -28,14 +28,14 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	buffer = malloc(1024);
-	if (!buffer)
-		exit(-1);
-	for (writ_num = 1024; writ_num == 1024;)
-	{
-		read_num = read(from_num, buffer, 1024);
-		writ_num = write(to_num, buffer, read_num);
-	}
+	copy_file(from_num, to_num, argv[1], argv[2]);
+/*
+*	for (writ_num = 1024; writ_num == 1024;)
+*	{
+*		read_num = read(from_num, buffer, 1024);
+*		writ_num = write(to_num, buffer, read_num);
+*	}
+*/
 	cl1 = close(from_num);
 	if (cl1 == -1)
 	{
@@ -48,6 +48,34 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", to_num);
 		exit(100);
 	}
-	free(buffer);
 	return (1);
+}
+/**
+* copy_file - if files exist, copies it
+* Return:void
+* @from_num: filenumber fd to copy from
+* @to_num: file number to copy to
+* @from: the name of the source file
+* @to: name of the dest file
+*/
+void copy_file(int from_num, int to_num, char *from, char *to)
+{
+	char buffer[1024];
+	int writ_num, read_num;
+
+	for (writ_num = 1024; writ_num == 1024;)
+	{
+		read_num = read(from_num, buffer, 1024);
+		if (read_num == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
+			exit(98);
+		}
+		writ_num = write(to_num, buffer, read_num);
+		if (writ_num == -1)
+		{
+			 dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
+			 exit(99);
+		}
+	}
 }
