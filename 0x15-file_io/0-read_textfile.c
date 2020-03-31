@@ -8,7 +8,7 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int filenum, numlets;
+	int filenum, numread, numwritten;
 	char *buf;
 
 	if (!filename)
@@ -19,10 +19,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buf = malloc(letters);
 	if (!buf)
 		return (0);
-	numlets = read(filenum, buf, letters);
+	numread = read(filenum, buf, letters);
 	close(filenum);
-	numlets = write(1, buf, numlets);
+	numwritten = write(1, buf, numread);
 	free(buf);
-	return (numlets);
+	if (numwritten != numread)
+		return (0);
+	return (numwritten);
 
 }
