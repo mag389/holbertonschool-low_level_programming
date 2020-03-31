@@ -19,13 +19,13 @@ int main(int argc, char *argv[])
 	from_num = open(argv[1], O_RDONLY);
 	if (from_num == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	to_num = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (to_num == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	buffer = malloc(1024);
@@ -37,10 +37,15 @@ int main(int argc, char *argv[])
 		writ_num = write(to_num, buffer, read_num);
 	}
 	cl1 = close(from_num);
-	cl2 = close(to_num);
-	if (cl1 == -1 || cl2 == -1)
+	if (cl1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", from_num);
+		exit(100);
+	}
+	cl2 = close(to_num);
+	if (cl2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", to_num);
 		exit(100);
 	}
 	free(buffer);
