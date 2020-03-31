@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", to_num);
 		exit(100);
 	}
-	return (1);
+	return (0);
 }
 /**
 * copy_file - if files exist, copies it
