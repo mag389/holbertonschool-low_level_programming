@@ -20,6 +20,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf)
 		return (0);
 	numread = read(filenum, buf, letters);
+	if (numread == -1)
+	{
+		free(buf);
+		return (0);
+	}
 	close(filenum);
 	numwritten = write(1, buf, numread);
 	free(buf);
