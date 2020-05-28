@@ -13,6 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dupstr;
 	unsigned long int hashindex;
 
+	(void)dupstr;
 	if (key == NULL || ht == NULL || value == NULL || !(*key))
 		return (0);
 	hashindex = key_index((const unsigned char *) key, ht->size);
@@ -23,7 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		printf("the head exists ----------\n");
 	while (head)
 	{
-		printf("checking for dupkeys\n");
+		printf("checking for dupkeys, %s, %s\n", head->key, head->value);
 		if (!strcmp(key, head->key))
 		{
 			printf("keymatch\n");
@@ -39,17 +40,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	newhn = malloc(sizeof(hash_node_t));
 	if (newhn == NULL)
 		return (0);
-	dupstr = strdup(value);
-	if (dupstr == NULL && value != NULL)
+	newhn->value = strdup(value);
+	if (newhn->value == NULL && value != NULL)
 		return (0);
 	newhn->key = strdup(key);
-	newhn->value = dupstr;
 	newhn->next = NULL;
-	head = (ht->array)[hashindex];
-	printf("right before the index:%lu f'n %s, %s\n",hashindex,  dupstr, newhn->key);
+	printf("right before the index:%lu f'n %s, %s\n",hashindex, newhn->value, newhn->key);
 	if (ht->array[hashindex] == NULL)
 	{
-		printf("inf the if\n");
+		printf("in the first if\n");
 		ht->array[hashindex] = newhn;
 	}
 	else
