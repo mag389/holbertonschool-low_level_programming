@@ -239,7 +239,7 @@ void shash_table_delete(shash_table_t *ht)
 }
 
 /**
-* delete_nodes - deletes nodes in a hash table entry
+* delete_snodes - deletes nodes in a hash table entry
 * Return: void
 * @head: the head node to be deleted
 */
