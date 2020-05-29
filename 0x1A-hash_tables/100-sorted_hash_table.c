@@ -5,6 +5,7 @@
 * Return: pointer to new table or null
 * @size: the size of the array
 */
+
 shash_table_t *shash_table_create(unsigned long int size)
 {
 	shash_table_t *sht;
@@ -32,6 +33,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 * @key: the key of the new element
 * @value: the value of the new element
 */
+
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *newhn, *head;
@@ -82,6 +84,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 * @newhn: the new hash node
 * @ht: the hash table object
 */
+
 void add_to_list(shash_node_t *newhn, shash_table_t *ht)
 {
 	shash_node_t *tmp;
@@ -129,6 +132,7 @@ void add_to_list(shash_node_t *newhn, shash_table_t *ht)
 * @ht: he hash table to look into
 * @key: the key to looking for
 */
+
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	shash_node_t *head;
@@ -153,6 +157,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 * Return: void
 * @ht: the hash table
 */
+
 void shash_table_print(const shash_table_t *ht)
 {
 	if (ht == NULL)
@@ -167,6 +172,7 @@ void shash_table_print(const shash_table_t *ht)
 * Return: void
 * @node:the shash_node_t node
 */
+
 void print_forward(shash_node_t *node)
 {
 	if (node == NULL)
@@ -184,6 +190,7 @@ void print_forward(shash_node_t *node)
 * Return: void
 * @ht: the hash tbale to print
 */
+
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	if (ht == NULL)
@@ -198,6 +205,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 * Return: void
 * @node: the node to print
 */
+
 void print_backwards(shash_node_t *node)
 {
 	if (node == NULL)
@@ -215,6 +223,7 @@ void print_backwards(shash_node_t *node)
 * Return: void
 * @ht: the table to delete
 */
+
 void shash_table_delete(shash_table_t *ht)
 {
 	unsigned long int i;
@@ -228,11 +237,13 @@ void shash_table_delete(shash_table_t *ht)
 	free(ht->array);
 	free(ht);
 }
+
 /**
 * delete_nodes - deletes nodes in a hash table entry
 * Return: void
 * @head: the head node to be deleted
 */
+
 void delete_snodes(shash_node_t *head)
 {
 	if (head == NULL)
