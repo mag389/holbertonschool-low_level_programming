@@ -16,7 +16,7 @@ void hash_table_print(const hash_table_t *ht)
 	printf("{");
 	for (i = 0; i < size; i++)
 	{
-		if (print_nodes(ht->array[i], started) == 1 && i < size - 1)
+		if (print_nodes(ht->array[i], started) == 1)
 		{
 			started = 1;
 		}
@@ -38,7 +38,7 @@ int print_nodes(hash_node_t *node, int started)
 	printf("'%s': '%s'", node->key, node->value);
 	if (node->next)
 	{
-		print_nodes(node->next, started);
+		print_nodes(node->next, 1);
 	}
 	return (1);
 }
