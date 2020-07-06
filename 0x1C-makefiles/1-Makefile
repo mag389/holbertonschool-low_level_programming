@@ -1,0 +1,6 @@
+# -*- MakeFile -*-
+CC=gcc
+SRC=main.c holberton.c
+
+all: holberton.c main.c
+	$(CC) $(SRC) -o holberton
