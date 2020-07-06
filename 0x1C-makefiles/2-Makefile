@@ -1,7 +1,7 @@
 # -*- MakeFile -*-
 CC=gcc
 SRC=main.c holberton.c
-OBJ=$(patsubst %.c,%.o,$(wildcard *.c))
+OBJ:=$(patsubst %.c,%.o,$(wildcard *.c))
 NAME=holberton
 
 all: $(OBJ)
