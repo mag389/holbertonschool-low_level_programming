@@ -21,6 +21,4 @@ def island_perimeter(grid):
                     perimeter += 1
                 if j == len(grid[i]) - 1:
                     perimeter += 1
-            print(grid[i][j], end="")
-        print(" " + str(perimeter))
     return perimeter
