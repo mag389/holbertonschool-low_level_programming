@@ -14,7 +14,7 @@ int advanced_binary(int *array, size_t size, int value)
 
 /*	find midpoint of array */
 	mid = size / 2 - 1 + size % 2;
-	if (!array)
+	if (!array || size == 0)
 		return (-1);
 /*	printf("mid is %u", mid);*/
 	print_array(array, size);
