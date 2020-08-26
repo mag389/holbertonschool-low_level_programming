@@ -14,15 +14,11 @@ int advanced_binary(int *array, size_t size, int value)
 
 /*	find midpoint of array */
 	mid = size / 2 - 1 + size % 2;
-/*	Null check of array */
 	if (!array)
 		return (-1);
-/*	printf("mid is %u", mid);*/
+	printf("mid is %u", mid);
 	print_array(array, size);
-/*
-*	deal with a size 1 basecase
-*	not strictly neccesary, useful for finding errors
-*/
+/* useful base check */
 	if (size == 1)
 	{
 		if (array[0] == value)
@@ -48,7 +44,7 @@ int advanced_binary(int *array, size_t size, int value)
 			return (mid);
 		if (array[mid - 1] != value)
 			return (mid);
-		return (advanced_binary(array, mid + 1 - size % 2, value));
+		return (advanced_binary(array, mid + 1, value));
 	}
 	else
 		return (-1);
