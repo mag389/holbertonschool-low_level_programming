@@ -12,20 +12,20 @@ int advanced_binary(int *array, size_t size, int value)
 	unsigned int mid;
 	int temp;
 
-/*	find midpoint of array */
-	mid = size / 2 - 1 + size % 2;
 	if (!array || size == 0)
 		return (-1);
+	/*	find midpoint of array */
+	mid = size / 2 - 1 + size % 2;
 /*	printf("mid is %u", mid);*/
 	print_array(array, size);
-/* useful base check */
+	/* useful base check */
 	if (size == 1)
 	{
 		if (array[0] == value)
 			return (0);
 		return (-1);
 	}
-/*	check midpoint for value compare, for recursive calls */
+	/*	check midpoint for value compare, for recursive calls */
 	if (mid != 0 && array[mid] == value && array[mid - 1] != value)
 		return (mid);
 	else if (array[mid] > value)
