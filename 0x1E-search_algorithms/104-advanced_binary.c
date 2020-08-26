@@ -30,7 +30,9 @@ int advanced_binary(int *array, size_t size, int value)
 		return (-1);
 	}
 /*	check midpoint for value compare, for recursive calls */
-	if (array[mid] > value)
+	if (mid != 0 && array[mid] == value && array[mid - 1] != value)
+		return (mid);
+	else if (array[mid] > value)
 		return (advanced_binary(array, mid, value));
 	else if (array[mid] < value)
 	{
@@ -43,6 +45,8 @@ int advanced_binary(int *array, size_t size, int value)
 	else if (array[mid] == value)
 	{
 		if (mid == 0)
+			return (mid);
+		if (array[mid - 1] != value)
 			return (mid);
 		return (advanced_binary(array, mid + 1, value));
 	}
