@@ -16,7 +16,7 @@ int advanced_binary(int *array, size_t size, int value)
 	mid = size / 2 - 1 + size % 2;
 	if (!array)
 		return (-1);
-	printf("mid is %u", mid);
+/*	printf("mid is %u", mid);*/
 	print_array(array, size);
 /* useful base check */
 	if (size == 1)
