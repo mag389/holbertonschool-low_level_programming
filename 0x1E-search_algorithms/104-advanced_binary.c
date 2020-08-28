@@ -29,7 +29,7 @@ int advanced_binary(int *array, size_t size, int value)
 	if (mid != 0 && array[mid] == value && array[mid - 1] != value)
 		return (mid);
 	else if (array[mid] > value)
-		return (advanced_binary(array, mid, value));
+		return (advanced_binary(array, mid + 1, value));
 	else if (array[mid] < value)
 	{
 		temp = advanced_binary((array + mid + 1), mid + 1 - size % 2, value);
